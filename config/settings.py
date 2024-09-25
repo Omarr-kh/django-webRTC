@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'channels',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -58,7 +59,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+ASGI_APPLICATION = 'videocall.asgi.application'
 
+CHANNEL_LAYERS = {
+    "default": {"BACKEND": "channels.layers.InMemoryChannelLayer"},
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
